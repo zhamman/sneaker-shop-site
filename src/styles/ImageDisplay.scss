@@ -1,0 +1,90 @@
+@import "./variables.scss";
+
+.image-section-2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 650px) {
+    display: none;
+  }
+  .large-image {
+    position: relative;
+    img {
+      height: 500px;
+      border-radius: 1rem;
+      @media screen and (max-width: 770px) {
+        height: 450px;
+      }
+    }
+    .svg-wrapper-left {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      top: 50%;
+      left: -50px;
+      transition: all 0.2s ease;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      .prev {
+        transition: all 0.2s ease;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .svg-wrapper-right {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      top: 50%;
+      right: -50px;
+      transition: all 0.2s ease;
+      transform: translate(50%, -50%);
+      cursor: pointer;
+      .next {
+        transition: all 0.2s ease;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .exit-button {
+      position: absolute;
+      top: -30px;
+      right: 10px;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      svg {
+        position: absolute;
+        right: 0;
+        path {
+          color: $orange;
+        }
+      }
+    }
+  }
+  .small-images-2 {
+    display: flex;
+    margin-top: 1.8rem;
+    position: relative;
+
+    .img {
+      margin: 0 0.9rem;
+      border-radius: 8px;
+      height: 85px;
+      img {
+        border-radius: 5px;
+        height: 100%;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

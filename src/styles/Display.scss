@@ -1,0 +1,266 @@
+@import "./variables.scss";
+
+.outer-display-container {
+  position: relative;
+}
+
+.display-container {
+  position: relative;
+  display: flex;
+  max-width: 1300px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  @media screen and (max-width: 769px) {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: 950px) {
+    max-width: 1000px;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: 0;
+  }
+  .image-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @media screen and (max-width: 769px) {
+      margin-bottom: 2rem;
+    }
+    .large-image {
+      img {
+        height: 388px;
+        border-radius: 1rem;
+        cursor: pointer;
+        @media screen and (max-width: 950px) {
+          height: 288px;
+        }
+        @media screen and (max-width: 769px) {
+          height: 388px;
+        }
+        @media screen and (max-width: 450px) {
+          height: 100%;
+          width: 100%;
+          border-radius: 0 0 0 0;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        position: relative;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .small-images {
+      display: flex;
+      margin-top: 1.8rem;
+      position: relative;
+      overflow: hidden;
+      height: 75px;
+      @media screen and (max-width: 950px) {
+        height: 60px;
+      }
+      @media screen and (max-width: 769px) {
+        height: 75px;
+      }
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
+
+      .img {
+        margin: 0 0.9rem;
+        border-radius: 8px;
+        img {
+          border-radius: 5px;
+          height: 100%;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+        @media screen and (max-width: 950px) {
+          margin: 0 0.5rem;
+        }
+        @media screen and (max-width: 950px) {
+          margin: 0 0.9rem;
+        }
+      }
+    }
+  }
+
+  .description-section {
+    flex: 1;
+    @media screen and (max-width: 769px) {
+      margin-bottom: 3rem;
+      margin-top: 1rem;
+    }
+    @media screen and (max-width: 450px) {
+      margin-top: 0rem;
+      margin: 0 2rem;
+    }
+
+    .watermark {
+      text-transform: uppercase;
+      color: $orange;
+      margin-bottom: 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      @media screen and (max-width: 950px) {
+        font-size: 0.4rem;
+      }
+    }
+    .title {
+      max-width: 500px;
+      font-size: 1.1rem;
+      max-width: 450px;
+      @media screen and (max-width: 950px) {
+        font-size: 0.8rem;
+        max-width: 300px;
+      }
+      @media screen and (max-width: 769px) {
+        font-size: 1.1rem;
+      }
+    }
+    .description {
+      margin: 2rem 0;
+      max-width: 490px;
+      line-height: 1.8;
+      color: $dark-grayish-blue;
+      @media screen and (max-width: 950px) {
+        font-size: 0.8rem;
+        max-width: 300px;
+        margin: 1rem 0;
+      }
+      @media screen and (max-width: 769px) {
+        max-width: 400px;
+        margin: 1rem 0;
+      }
+    }
+    .price-section {
+      margin-bottom: 2rem;
+      @media screen and (max-width: 950px) {
+        margin-bottom: 2rem;
+      }
+      .price {
+        .price-discount {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          margin-bottom: 0.5rem;
+          @media screen and (max-width: 950px) {
+            font-size: 0.6rem;
+          }
+          .discount-percentage {
+            margin-left: 1rem;
+            font-size: 0.8rem;
+            border: none;
+            padding: 3px 7px;
+            background-color: $pale-orange;
+            color: $orange;
+            border-radius: 3px;
+            font-weight: 700;
+            @media screen and (max-width: 950px) {
+              font-size: 0.6rem;
+              max-width: 300px;
+            }
+          }
+        }
+        .original-price {
+          color: $dark-grayish-blue;
+          font-weight: 700;
+          text-decoration: line-through $dark-grayish-blue 2px;
+          @media screen and (max-width: 950px) {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+    .cart-section {
+      display: flex;
+      @media screen and (max-width: 450px) {
+        flex-direction: column;
+      }
+      .quantity-slider {
+        display: flex;
+        margin-right: 1rem;
+        background-color: $light-grayish-blue;
+        border-radius: 7px;
+        border: none;
+        @media screen and (max-width: 950px) {
+          width: 80px;
+          height: 40px;
+        }
+        @media screen and (max-width: 450px) {
+          margin-bottom: 1rem;
+          width: 100%;
+          height: 50px;
+        }
+        .box {
+          width: 40px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @media screen and (max-width: 950px) {
+            width: 30px;
+            height: 40px;
+          }
+          @media screen and (max-width: 450px) {
+            width: 100%;
+            height: 50px;
+          }
+        }
+        .right {
+          color: $orange;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          transform: scale(1.3);
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+        .left {
+          color: $orange;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          transform: scale(1.3);
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+      }
+      .add-to-cart {
+        button {
+          height: 50px;
+          width: 300px;
+          border-radius: 7px;
+          border: none;
+          background-color: $orange;
+          color: white;
+          font-family: "Kumbh Sans", sans-serif;
+          font-weight: 700;
+          cursor: pointer;
+
+          &:hover {
+            filter: brightness(130%);
+          }
+          @media screen and (max-width: 950px) {
+            height: 40px;
+            width: 200px;
+          }
+          @media screen and (max-width: 450px) {
+            margin-bottom: 5rem;
+            width: 100%;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+}
